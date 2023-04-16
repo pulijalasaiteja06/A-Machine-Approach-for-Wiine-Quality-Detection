@@ -1,0 +1,178 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wine Quality Prediction</title>
+
+
+    <!-- BootStrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+
+    <!-- css -->
+    <!-- <link rel="stylesheet" href="styles.css">  -->
+    <style>
+        body {
+            background-color: #fff;
+            text-align: center;
+        }
+
+        .navbar {
+            background-color: #333333;
+        }
+        .topRight{
+            float:right;
+        }
+        img{
+            margin-top: 7rem;
+        }
+        a{
+            color: #fff;
+        }
+        @media screen and (max-width: 480px) {
+            img {
+                margin-top: 0rem;
+                 }
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+    <!-- As a heading -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">Wine Quality Predictor</a>
+                
+            </div>
+            <a class="topRight" href="index.html">Signin/Reister</a>
+        </div>
+    </nav>
+
+
+
+    <div class="container mt-3">
+        <form action="\predict" method="post">
+            <table>
+                <tr>
+                    <td>
+                        <label for="fixed_acidity" >Fixed Acidity</label>
+                    </td>
+                    <td>
+                        <input type="number" step="any"  name="fixed_acidity" required />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="volatile_acidity" >Volatile Acidity</label>
+                    </td>
+                    <td>
+                        <input type="number" step="any"  name="volatile_acidity" required />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="citric_acid" >Citric Acid</label>
+                    </td>
+                    <td>
+                        <input type="number" step="any"  name="citric_acid" required />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="residual_sugar" >Residual Sugar</label>
+                    </td>
+                    <td>
+                        <input type="number" step="any"  name="residual_sugar" required />
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="chlorides" >Chlorides</label>
+                    </td>
+                    <td>
+                        <input type="number" step="any"  name="chlorides" required />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="free_sulfer_dioxide" >Free Sulfer Dioxide</label>
+                    </td>
+                    <td>
+                        <input type="number" step="any"  name="free_sulfer_dioxide" required />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="total_sulfer_dioxide" >Total Sulfer Dioxide</label>
+                    </td>
+                    <td>
+                        <input type="number" step="any"  name="total_sulfer_dioxide" required />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="density" >Density</label>
+                    </td>
+                    <td>
+                        <input type="number" step="any"  name="density" required />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="pH" >pH</label>
+                    </td>
+                    <td>
+                        <input type="number" step="any"  name="pH" required />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="sulphates" >Sulphates</label>
+                    </td>
+                    <td>
+                        <input type="number" step="any"  name="sulphates" required />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="alchohol" >Alchohol</label>
+                    </td>
+                    <td>
+                        <input type="number" step="any"  name="alcohol" required />
+                    </td>
+                </tr>
+                
+            </table>
+            <input type="submit" value="Predict" class="btn btn-secondary">
+        </form>
+        <br />
+        <h3>{{ prediction_text }}</h3>
+
+        <br /> 
+
+    </div>
+
+
+
+
+    <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
